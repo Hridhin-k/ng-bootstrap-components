@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <img style="margin-top: 20px;margin-right:70px ;"
+        src="https://images.ctfassets.net/x7j9qwvpvr5s/6InF2DdlEwEABw6TXQn1KQ/f896b9731b0f3ed4bd8fa34e3cbed575/DRE-home-A7N_5796-banner-full-1330x600.jpg">
+    </div>
+  </div>
+</div>
+<h2 style="text-align: center;color: aliceblue;margin: 10PX;">CHOOSE YOUR COURSE</h2>
+
+
+
+<div style="margin: 25px;background-color: black;">
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1" title="Simple">
+      <ng-template ngbPanelContent>{{discription}}
+
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-2">
+      <ng-template ngbPanelTitle>
+        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>{{discription}}
+
+      </ng-template>
+    </ngb-panel>
+
+  </ngb-accordion>
+</div>

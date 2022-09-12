@@ -1,0 +1,39 @@
+<app-modal style="margin-top:30px ;"></app-modal>
+<div class="d-flex justify-content-end">
+  <form style="color:rgb(121, 217, 255) ;">
+    <div class="mb-3 row" style="margin:auto;">
+      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label ">Full text
+        search:</label>
+      <div class="col-xs-3 col-sm-auto">
+        <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter">
+      </div>
+    </div>
+  </form>
+</div>
+
+<table class="table ">
+  <thead style="color:rgb(121, 217, 255) ;">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Country</th>
+      <th scope="col">Area</th>
+      <th scope="col">Riders</th>
+
+    </tr>
+  </thead>
+  <tbody style="color:rgb(121, 217, 255) ;">
+    <tr *ngFor="let country of countries$ | async; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="me-2" style="width: 20px">
+        <ngb-highlight [result]="country.name" [term]="filter.value"></ngb-highlight>
+      </td>
+      <td>
+        <ngb-highlight [result]="country.area | number" [term]="filter.value"></ngb-highlight>
+      </td>
+      <td>
+        <ngb-highlight [result]="country.Riders | number" [term]="filter.value"></ngb-highlight>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header" style="background-color:rgb(84, 19, 19) ;">
+    <h4 class="offcanvas-title" id="offcanvas-basic-title">MERCHANDICE</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <div class="offcanvas-body" style="background-color:rgb(255, 255, 255);">
+    <!-- <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+            #dp="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+    </form> -->
+    <div class="text-end">
+      <button type="button" class="btn btn-outline-dark" (click)="offcanvas.close('Save click')">Save</button>
+    </div>
+  </div>
+  <div style="margin:20px ;">
+    <app-rating></app-rating>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)"
+  style="background-color: black;">MERCHANDICE</button>
